@@ -1,0 +1,6 @@
+**/.vscode
+**/bin
+**/obj
+/dist
+/tmp
+/out-tsc
