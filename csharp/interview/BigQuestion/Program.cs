@@ -66,8 +66,14 @@ public int Output(ref int input)
       input = 2;
       return input;
     }
-  }
+  
 
+  public void GetValue(out int output)
+  {
+  //  Console.WriteLine(output);// нельзя прочитать
+      output = 200; // но можно присвоить одно из отличий от ref
+    }
+}
   public class Program
   {
     public static void Main(string[] args)
@@ -121,6 +127,7 @@ public int Output(ref int input)
       // Вопрос 14
       Console.WriteLine("16: {0}", o == (object)i);
 
+      c.GetValue(out i);
     }
   }
 }
