@@ -1,0 +1,32 @@
+body {
+   color: blueviolet;
+}
+
+div {
+  /* background-color: yellow;*/
+}
+
+div.dropdown:hover {
+   border: thick solid grey;
+}
+
+div.dropdown:focus {
+   border: thick solid blue;
+}
+
+div.dropdown:focus-within {
+   border: thick solid violet;
+}
+
+
+div.dropdown div.dd-label{
+   border: thin solid black;
+   padding: 0.5rem;
+   /*background-color: gold;*/
+}
+
+.hidden {
+   display: none;
+}
+
+

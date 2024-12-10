@@ -1,0 +1,39 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.Components.Forms
+@using BlazorWebAssembly.Components
+@inject HttpClient Http
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, wor4ld!</h1>
+
+<Autocomplete SearchAsync="SearchWeatherAsync" >
+   <PopupListTemplate Context="WeatherForecast">@WeatherForecast.Summary</PopupListTemplate>
+</Autocomplete>
+<h1>Bye bye</h1>
+
+@code {
+   private string выбранныйЭлементСписка;
+
+   private Task<IEnumerable<WeatherForecast>> SearchWeatherAsync(string search)
+   {
+      return Http.GetFromJsonAsync<IEnumerable<WeatherForecast>>("sample-data/weather.json");
+   }
+
+   private IList<string> список = new List<string>
+{
+"A","B", "C"
+};
+
+   public class WeatherForecast
+   {
+      public DateOnly Date { get; set; }
+
+      public int TemperatureC { get; set; }
+
+      public string? Summary { get; set; }
+
+      public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+   }
+
+}
